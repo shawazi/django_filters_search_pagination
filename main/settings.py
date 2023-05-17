@@ -90,8 +90,9 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ch13todo', # changed from default to pgsql
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2', allegedly deprecated
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('NAME'), # changed from default to pgsql
         'USER': 'postgres',
         'PASSWORD': '666',
         'HOST': 'localhost',
